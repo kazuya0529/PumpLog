@@ -14,4 +14,7 @@ class Menu < ActiveHash::Base
     { id: 12, name: 'アブローラー' },
     { id: 13, name: 'ハンギングレッグレイズ' }
   ]
+
+  include ActiveHash::Associations
+  has_many :workout_menus
 end

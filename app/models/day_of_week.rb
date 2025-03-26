@@ -9,4 +9,7 @@ class DayOfWeek < ActiveHash::Base
     { id: 7, name: 'Sat' },
     { id: 8, name: 'Sun' }
   ]
+
+  include ActiveHash::Associations
+  has_many :workout_menus
 end
