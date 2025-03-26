@@ -10,5 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 0) do
+ActiveRecord::Schema[7.1].define(version: 2025_03_26_130007) do
+  create_table "workout_menus", charset: "utf8mb3", force: :cascade do |t|
+    t.integer "day_of_week_id", null: false
+    t.integer "menu_id", null: false
+    t.integer "rep_id", null: false
+    t.integer "set_id", null: false
+    t.integer "dumbbell_weight_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
 end
