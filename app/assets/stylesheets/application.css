@@ -99,3 +99,53 @@
 .day-label {
   pointer-events: none;
 }
+
+.new-form-page {
+  text-align: center;
+  padding: 60px 5%;
+}
+
+.form-box {
+  background-color: #fff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.field {
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.field p {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.select-box {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.submit-button {
+  display: inline-block;
+  padding: 12px 28px;
+  font-size: 18px;
+  color: #198754;
+  background-color: white;
+  border: 2px solid #198754;
+  border-radius: 40px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #198754;
+  color: white;
+}
