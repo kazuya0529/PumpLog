@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<div class="toppage">
+  <h1 class="page-title">PUMPLOG</h1>
+
+  <div class="button-wrapper">
+    <%= link_to "New Pump", new_workout_menu_path, class: "custom-button" %>
+  </div>
+
+  <div class="calendar-container">
+    <%= week_calendar(class: "custom-week-calendar") do |date| %>
+      <div class="day-box"></div>
+    <% end %>
+  </div>
+
+  <p style="margin-top: 60px; font-size: 12px; text-align: center; color: #aaa;">© PUMPLOG</p>
+</div>
