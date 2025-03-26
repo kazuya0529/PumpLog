@@ -1,15 +1,101 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
  *= require_tree .
  *= require_self
  */
+ @import "simple_calendar";
+
+ body {
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: #f7f6f4;
+  margin: 0;
+  padding: 0;
+  color: #1a1a1a;
+}
+
+.toppage {
+  padding: 60px 5% 40px;
+  text-align: center;
+}
+
+.page-title {
+  font-size: 64px;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+.button-wrapper {
+  margin-bottom: 50px;
+}
+
+.custom-button {
+  display: inline-block;
+  padding: 12px 28px;
+  font-size: 18px;
+  color: #0a58ca;
+  background-color: white;
+  border: 2px solid #0a58ca;
+  border-radius: 40px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.custom-button:hover {
+  background-color: #0a58ca;
+  color: white;
+}
+
+.calendar-container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 1000px;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.week-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.nav-link {
+  color: #0a58ca;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.week-number {
+  color: #333;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 12px;
+}
+
+.day-box {
+  height: 220px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fafafa;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #0a58ca;
+}
+
+.day-label {
+  pointer-events: none;
+}

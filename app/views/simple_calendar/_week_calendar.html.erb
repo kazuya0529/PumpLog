@@ -1,0 +1,16 @@
+<div class="custom-week-calendar">
+  <div class="week-nav">
+    <%= link_to "Previous", calendar.url_for_previous_view, class: "nav-link" %>
+    <span class="week-number">Week <%= calendar.week_number %></span>
+    <%= link_to "Next", calendar.url_for_next_view, class: "nav-link" %>
+  </div>
+
+  <div class="calendar-grid">
+    <% date_range.slice(0, 7).each do |date| %>
+      <div class="day-box">
+        <div class="day-label"><%= date.strftime("%a") %></div>
+        <%= yield(date) %>
+      </div>
+    <% end %>
+  </div>
+</div>
