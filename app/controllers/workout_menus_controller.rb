@@ -1,4 +1,7 @@
 class WorkoutMenusController < ApplicationController
   def index
   end
+
+  def new
+  end
 end
