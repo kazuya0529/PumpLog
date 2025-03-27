@@ -1,5 +1,6 @@
 class WorkoutMenusController < ApplicationController
   def index
+    @workout_menus = WorkoutMenu.all
   end
 
   def new
