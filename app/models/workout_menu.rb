@@ -3,7 +3,7 @@ class WorkoutMenu < ApplicationRecord
   belongs_to :day_of_week
   belongs_to :menu
   belongs_to :rep
-  belongs_to :set
+  belongs_to :training_set
   belongs_to :dumbbell_weight
 
   validates :day_of_week_id, :menu_id, :rep_id, :set_id, :dumbbell_weight_id,

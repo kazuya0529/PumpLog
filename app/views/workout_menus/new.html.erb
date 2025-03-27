@@ -21,7 +21,7 @@
 
       <div class="field">
         <p>set</p>
-        <%= f.collection_select :set_id, Set.all, :id, :name, {}, { class: "select-box" } %>
+        <%= f.collection_select :set_id, TrainingSet.all, :id, :name, {}, { class: "select-box" } %>
       </div>
 
       <div class="field">
