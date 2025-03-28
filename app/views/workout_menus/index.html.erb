@@ -9,8 +9,23 @@
 
   <div class="calendar-container">
     <%= week_calendar(class: "custom-week-calendar") do |date| %>
-      <div class="day-box"></div>
+  <div class="day-box">
+    <div class="day-label"><%= date.strftime("%-m/%-d(%a)") %></div>
+    <% day_name = date.strftime("%a") %>
+    <% day_of_week = DayOfWeek.find_by(name: day_name) %>
+    <% if day_of_week %>
+      <% @workout_menus.select { |wm| wm.day_of_week_id == day_of_week.id }.each do |workout_menu| %>
+        <div class="workout-entry">
+          <p><%= workout_menu.menu.name %></p>
+          <p><%= workout_menu.rep.name %></p>
+          <p><%= workout_menu.set.name %></p>
+          <p><%= workout_menu.dumbbell_weight.name %></p>
+        </div>
+      <% end %>
     <% end %>
+  </div>
+<% end %>
+
   </div>
 
   <p style="margin-top: 60px; font-size: 12px; text-align: center; color: #aaa;">© PUMPLOG</p>

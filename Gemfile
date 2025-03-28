@@ -73,3 +73,4 @@ end
 
 gem 'simple_calendar', '~> 2.0'
 gem 'active_hash'
+gem 'pry-rails'

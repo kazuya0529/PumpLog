@@ -1,6 +1,7 @@
 class WorkoutMenusController < ApplicationController
   def index
     @workout_menus = WorkoutMenu.all
+    @workout_menus = WorkoutMenu.includes(:menu, :rep, :set, :dumbbell_weight).order(created_at: :asc)
   end
 
   def new
