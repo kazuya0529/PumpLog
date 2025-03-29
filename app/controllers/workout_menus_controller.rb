@@ -1,6 +1,5 @@
 class WorkoutMenusController < ApplicationController
   def index
-    @workout_menus = WorkoutMenu.all
     @workout_menus = WorkoutMenu.includes(:menu, :rep, :set, :dumbbell_weight).order(created_at: :asc)
   end
 
@@ -25,7 +24,8 @@ class WorkoutMenusController < ApplicationController
       :menu_id,
       :rep_id,
       :set_id,
-      :dumbbell_weight_id
+      :dumbbell_weight_id,
+      :date
     )
   end
 end

@@ -3,30 +3,40 @@
 <div class="toppage">
   <h1 class="page-title">PUMPLOG</h1>
 
+  <p style="color: green;">
+  workout_menus の数: <%= @workout_menus.size %>
+</p>
+
   <div class="button-wrapper">
     <%= link_to "New Pump", new_workout_menu_path, class: "custom-button" %>
   </div>
 
-  <div class="calendar-container">
-    <%= week_calendar(class: "custom-week-calendar") do |date| %>
-  <div class="day-box">
-    <div class="day-label"><%= date.strftime("%-m/%-d(%a)") %></div>
-    <% day_name = date.strftime("%a") %>
-    <% day_of_week = DayOfWeek.find_by(name: day_name) %>
-    <% if day_of_week %>
-      <% @workout_menus.select { |wm| wm.day_of_week_id == day_of_week.id }.each do |workout_menu| %>
-        <div class="workout-entry">
-          <p><%= workout_menu.menu.name %></p>
-          <p><%= workout_menu.rep.name %></p>
-          <p><%= workout_menu.set.name %></p>
-          <p><%= workout_menu.dumbbell_weight.name %></p>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
-<% end %>
+  <p style="color: red;">
+  workout_menus の date 一覧: <%= @workout_menus.map(&:date).inspect %>
+</p>
 
-  </div>
+  <div class="calendar-container">
+  <%= week_calendar(class: "custom-week-calendar") do |date| %>
+    <div class="day-box">
+      <div class="day-label"><%= date.strftime("%-m/%-d(%a)") %></div>
+
+      <% @workout_menus.each do |wm| %>
+        <p style="font-size: 12px; color: red;">
+          DEBUG: wm.id = <%= wm.id %>, wm.date = <%= wm.date %>, カレンダー日付 = <%= date.to_date %>
+        </p>
+
+        <% if wm.date.present? && wm.date.to_date == date.to_date %>
+          <div class="workout-entry">
+            <p><%= wm.menu&.name %></p>
+            <p><%= wm.rep&.name %></p>
+            <p><%= wm.set&.name %></p>
+            <p><%= wm.dumbbell_weight&.name %></p>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
 
   <p style="margin-top: 60px; font-size: 12px; text-align: center; color: #aaa;">© PUMPLOG</p>
 </div>
