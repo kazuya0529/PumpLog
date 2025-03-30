@@ -11,7 +11,7 @@
 
       <div class="field">
         <p>menu</p>
-        <%= f.collection_select :menu_id, Menu.all, :id, :name, {}, { class: "select-box" } %>
+        <%= f.collection_select :menu_id, Menu.all, :id, :name, {}, { class: "select-box", id: "menu-select" } %>
       </div>
 
       <div class="field">
@@ -24,7 +24,7 @@
         <%= f.collection_select :training_set_id, TrainingSet.all, :id, :name, {}, { class: "select-box" } %>
       </div>
 
-      <div class="field">
+      <div class="field" id="dumbbell-field">
         <p>dumbbell weight</p>
         <%= f.collection_select :dumbbell_weight_id, DumbbellWeight.all, :id, :name, {}, { class: "select-box" } %>
       </div>
