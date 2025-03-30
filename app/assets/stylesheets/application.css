@@ -83,19 +83,96 @@
 }
 
 .day-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
   height: 220px;
   border: 1px solid #ccc;
   border-radius: 10px;
   background-color: #fafafa;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding-top: 10px;
-  font-weight: bold;
-  font-size: 16px;
-  color: #0a58ca;
+  padding: 10px;
+  position: relative;
 }
 
 .day-label {
-  pointer-events: none;
+  font-weight: bold;
+  color: #0033FF;
+  margin-bottom: 10px;
+}
+
+.workout-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.workout-entry {
+  font-size: 14px;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 5px;
+  line-height: 1.4;
+}
+
+.new-form-page {
+  text-align: center;
+  padding: 60px 5%;
+}
+
+.form-box {
+  background-color: #fff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.field {
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.field p {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.select-box {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.submit-button {
+  display: inline-block;
+  padding: 12px 28px;
+  font-size: 18px;
+  color: #198754;
+  background-color: white;
+  border: 2px solid #198754;
+  border-radius: 40px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #198754;
+  color: white;
+}
+
+input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  box-sizing: border-box;
 }

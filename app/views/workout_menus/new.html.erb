@@ -1,0 +1,40 @@
+<div class="new-form-page">
+  <h1 class="page-title">NEWPUMP</h1>
+
+  <div class="form-box">
+    <%= form_with model: @workout_menu, local: true do |f| %>
+
+      <div class="field">
+       <p>date</p>
+       <%= f.date_field :date, class: "select-box" %>
+      </div>
+
+      <div class="field">
+        <p>menu</p>
+        <%= f.collection_select :menu_id, Menu.all, :id, :name, {}, { class: "select-box", id: "menu-select" } %>
+      </div>
+
+      <div class="field">
+        <p>rep</p>
+        <%= f.collection_select :rep_id, Rep.all, :id, :name, {}, { class: "select-box" } %>
+      </div>
+
+      <div class="field">
+        <p>set</p>
+        <%= f.collection_select :training_set_id, TrainingSet.all, :id, :name, {}, { class: "select-box" } %>
+      </div>
+
+      <div class="field" id="dumbbell-field">
+        <p>dumbbell weight</p>
+        <%= f.collection_select :dumbbell_weight_id, DumbbellWeight.all, :id, :name, {}, { class: "select-box" } %>
+      </div>
+
+      <div class="button-wrapper">
+        <%= f.submit "Save Pump", class: "submit-button" %>
+      </div>
+
+    <% end %>
+  </div>
+
+  <p style="margin-top: 60px; font-size: 12px; text-align: center; color: #aaa;">© PUMPLOG</p>
+</div>

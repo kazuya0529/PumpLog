@@ -6,11 +6,24 @@
   </div>
 
   <div class="calendar-grid">
-    <% date_range.slice(0, 7).each do |date| %>
-      <div class="day-box">
-        <div class="day-label"><%= date.strftime("%a") %></div>
-        <%= yield(date) %>
+    <% date_range.each do |date| %>
+    <div class="day-box">
+      <div class="day-label"><%= date.strftime("%a") %></div>
+      <div class="workout-wrapper">
+      <% @workout_menus.each do |workout_menu| %>
+      <% if workout_menu.date == date %>
+        <div class="workout-entry">
+          <p><%= workout_menu.menu.name %></p>
+          <p><%= workout_menu.rep.name %></p>
+          <p><%= workout_menu.training_set.name %></p>
+          <% if workout_menu.dumbbell_weight_id != 1 %>
+            <p><%= workout_menu.dumbbell_weight.name %></p>
+          <% end %>
+        </div>
+      <% end %>
+      <% end %>
       </div>
+    </div>
     <% end %>
   </div>
 </div>
