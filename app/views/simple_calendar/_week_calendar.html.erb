@@ -7,9 +7,10 @@
 
   <div class="calendar-grid">
     <% date_range.each do |date| %>
-  <div class="day-box">
-    <div class="day-label"><%= date.strftime("%a") %></div>
-    <% @workout_menus.each do |workout_menu| %>
+    <div class="day-box">
+      <div class="day-label"><%= date.strftime("%a") %></div>
+      <div class="workout-wrapper">
+      <% @workout_menus.each do |workout_menu| %>
       <% if workout_menu.date == date %>
         <div class="workout-entry">
           <p><%= workout_menu.menu.name %></p>
@@ -18,8 +19,9 @@
           <p><%= workout_menu.dumbbell_weight.name %></p>
         </div>
       <% end %>
+      <% end %>
+      </div>
+    </div>
     <% end %>
-  </div>
-<% end %>
   </div>
 </div>
