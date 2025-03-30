@@ -21,6 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  toggleDumbbellField(); // 初回実行
-  menuSelect.addEventListener("change", toggleDumbbellField); // 変更時に実行
+  toggleDumbbellField();
+  menuSelect.addEventListener("change", toggleDumbbellField);
 });
