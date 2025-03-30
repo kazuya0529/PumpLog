@@ -3,11 +3,6 @@
 
   <div class="form-box">
     <%= form_with model: @workout_menu, local: true do |f| %>
-      
-      <div class="field">
-        <p>day of week</p>
-        <%= f.collection_select :day_of_week_id, DayOfWeek.all, :id, :name, {}, { class: "select-box" } %>
-      </div>
 
       <div class="field">
        <p>date</p>

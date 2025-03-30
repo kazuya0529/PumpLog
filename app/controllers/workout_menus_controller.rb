@@ -20,7 +20,6 @@ class WorkoutMenusController < ApplicationController
 
   def workout_menu_params
     params.require(:workout_menu).permit(
-      :day_of_week_id,
       :menu_id,
       :rep_id,
       :training_set_id,
