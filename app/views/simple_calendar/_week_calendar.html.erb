@@ -16,7 +16,9 @@
           <p><%= workout_menu.menu.name %></p>
           <p><%= workout_menu.rep.name %></p>
           <p><%= workout_menu.training_set.name %></p>
-          <p><%= workout_menu.dumbbell_weight.name %></p>
+          <% if workout_menu.dumbbell_weight_id != 1 %>
+            <p><%= workout_menu.dumbbell_weight.name %></p>
+          <% end %>
         </div>
       <% end %>
       <% end %>
