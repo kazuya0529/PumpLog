@@ -1,24 +1,91 @@
-# README
+## アプリケーション名
+PumpLog
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## アプリケーション概要
+PumpLogは、筋トレのメニューを日付ごとに記録・管理できるトレーニングログアプリです。
+<br>ユーザーは、カレンダー形式のトップページから、自分が行ったトレーニングを簡単に振り返ることができます。
+<br>日付・種目・回数・セット数・使用したダンベル重量を記録することで、日々のトレーニング内容を可視化し、継続や改善に役立てることができます。
 
-Things you may want to cover:
+## URL
+https://pumplog.onrender.com/
 
-* Ruby version
+## テスト用アカウント
+Basic認証ユーザー名：admin
+<br>Basic認証パスワード：2222
 
-* System dependencies
+## 利用方法
+1. トップページにアクセスすると、1週間単位のカレンダー形式で筋トレ記録を確認できます。
+2. 右上の「New Pump」ボタンから筋トレメニューの投稿ページに移動します。
+3. 日付・筋トレメニュー・回数（rep）・セット数（set）・ダンベル重量をプルダウンで選択します。
+4. 「Save Pump」ボタンを押すことで、選択した内容が保存されます。
+5. 登録された筋トレメニューは、トップページの該当する日付欄に自動で表示されます。
 
-* Configuration
+## アプリケーションを作成した背景
+筋トレを続ける中で、過去のメニューや負荷を振り返りたいと思う場面が多くありました。
+<br>しかし、紙やメモアプリでは記録が分散して管理しにくく、継続しづらさを感じていました。
+<br>そこで、トレーニング内容を日付ごとに簡単に記録・確認できるアプリがあれば便利だと考え、PumpLogを開発しました。
+<br>筋トレの継続や成長をサポートする、シンプルで見やすいツールを目指しています。
 
-* Database creation
+## 実装した機能についての画像やGIFおよびその説明
+|ページ|説明|
+|---|------------------|
+|![Image from Gyazo](https://gyazo.com/b8d20c72c38fbf5d557a221b079b26d1.gif)|トップページ|
+|![Image from Gyazo](https://gyazo.com/cfcc97ffae609fbff1d6383697020bd5.gif)|筋トレメニュー入力機能|
+|![Image from Gyazo](https://gyazo.com/8cc099a2cd8b16b53b07b3ec173ebc84.gif)|筋トレメニュー保存機能|
 
-* Database initialization
+## 実装予定の機能
+- トップページに今日の筋トレメニューを表示
+- ユーザー管理機能
+- 編集機能
+- 削除機能
 
-* How to run the test suite
+## データベース設計
+![Image from Gyazo](https://gyazo.com/245a3d68fc5d574185e91182cd68da5c.png)
 
-* Services (job queues, cache servers, search engines, etc.)
+## 開発環境
+| 項目               | バージョン・サービス |
+|------------------|-----------------|
+| **言語**        | Ruby 3.2.0 |
+| **フレームワーク** | Ruby on Rails 7.1.5.1 |
+| **データベース**  | PostgreSQL 16（本番） / MySQL 8.0.40（開発） |
+| **フロントエンド** | HTML / CSS / JavaScript |
+| **認証機能**    | Devise |
+| **デプロイ環境** | Render |
+| **バージョン管理** | GitHub |
 
-* Deployment instructions
+## ローカルでの動作方法
 
-* ...
+1. リポジトリをクローンします。
+```ruby
+  git clone https://github.com/kazuya0529/PumpLog.git
+```
+
+2.必要なGemをインストールします。
+  ```ruby
+  bundle install 
+  ```
+3.データベースを設定します。
+  ```ruby
+  rails db:create
+  rails db:migrate
+  ```
+4.アプリケーションを起動します。
+  ```ruby
+  rails s
+  ```
+5.ブラウザで http://localhost:3000 にアクセスします。
+
+
+## 工夫したポイント
+PumpLogは、筋トレ初心者から上級者までが使いやすいように設計されています。特に以下の点に工夫しました。
+
+<br> - シンプルな操作性：プルダウン形式で種目・回数・重量を選択するだけで記録が完了します。
+<br> - 視認性の高いトップページ：1週間のトレーニングをカレンダー形式で一覧表示し、どの日に何をしたかがひと目で分かります。
+<br> - わかりやすいメニュー構成：各項目（回数・セット・重量）を細かく分け、筋トレ記録をより具体的に残せるようにしています。
+
+## 今後の課題
+現在のPumpLogでは、筋トレメニューの登録と閲覧に特化していますが、以下の機能を追加することで、より使いやすく便利なアプリを目指します。
+
+<br> - 「今日のメニュー」自動表示：トップページに今日の日付のメニューを自動でピックアップ表示する機能を実装予定です。
+<br> - ユーザー管理機能：ログイン機能を導入し、個人ごとの記録を管理できるようにします。
+<br> - 編集・削除機能：登録したトレーニングメニューを後から修正・削除できるようにする予定です。
