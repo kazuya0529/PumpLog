@@ -1,5 +1,5 @@
 class WorkoutMenusController < ApplicationController
-  before_action :move_to_index, except: [:index]
+  before_action :authenticate_user!, except: [:index]
   def index
     @workout_menus = WorkoutMenu.all
   end
@@ -27,11 +27,5 @@ class WorkoutMenusController < ApplicationController
       :dumbbell_weight_id,
       :date
     )
-  end
-
-  def move_to_index
-    unless user_signed_in?
-      redirect_to action: :index
-    end
   end
 end
