@@ -1,18 +1,11 @@
-<p id="notice"><%= notice %></p>
-
 <div class="toppage">
-  <h1 class="page-title">PUMPLOG</h1>
+  <h1 class="page-title">WELCOME</h1>
 
-  <div class="button-wrapper">
-    <%= link_to "New Pump", new_workout_menu_path, class: "custom-button" %>
-    <%= link_to "#", method: :delete, class: "custom-button" do %>
-      &ensp; Log out &ensp;
+  <div class="auth-buttons">
+    <%= link_to new_user_session_path, class: "custom-button" do %>
+      &thinsp; Log in &thinsp;
     <% end %>
-  </div>
-
-  <div class="calendar-container">
-  <%= week_calendar(class: "custom-week-calendar") do |date| %>
-  <% end %>
+    <%= link_to "Sign up", new_user_registration_path, class: "custom-button" %>
   </div>
 
   <p style="margin-top: 60px; font-size: 12px; text-align: center; color: #aaa;">© PUMPLOG</p>
