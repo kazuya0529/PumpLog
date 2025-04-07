@@ -5,7 +5,9 @@
 
   <div class="button-wrapper">
     <%= link_to "New Pump", new_workout_menu_path, class: "custom-button" %>
-    <%= link_to "Log out", "#" , method: :delete, class: "custom-button" %>
+    <%= link_to "#", method: :delete, class: "custom-button" do %>
+      &ensp; Log out &ensp;
+    <% end %>
   </div>
 
   <div class="calendar-container">
