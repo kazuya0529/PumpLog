@@ -1,12 +1,34 @@
-<div class="toppage">
-  <h1 class="page-title">WELCOME</h1>
+<% if user_signed_in? %>
+  <p id="notice"><%= notice %></p>
 
-  <div class="auth-buttons">
-    <%= link_to new_user_session_path, class: "custom-button" do %>
-      &thinsp; Log in &thinsp;
-    <% end %>
-    <%= link_to "Sign up", new_user_registration_path, class: "custom-button" %>
+  <div class="toppage">
+    <h1 class="page-title">PUMPLOG</h1>
+
+    <div class="button-wrapper">
+      <%= link_to "New Pump", new_workout_menu_path, class: "custom-button" %>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete, data: { turbo: false }, class: "custom-button" %>
+    </div>
+
+    <div class="calendar-container">
+      <%= week_calendar(class: "custom-week-calendar") do |date| %>
+      <% end %>
+    </div>
+
+    <p style="margin-top: 60px; font-size: 12px; text-align: center; color: #aaa;">© PUMPLOG</p>
   </div>
 
-  <p style="margin-top: 60px; font-size: 12px; text-align: center; color: #aaa;">© PUMPLOG</p>
-</div>
+<% else %>
+
+  <div class="toppage">
+    <h1 class="page-title">WELCOME</h1>
+
+    <div class="auth-buttons">
+      <%= link_to new_user_session_path, class: "custom-button" do %>
+        &thinsp; Log in &thinsp;
+      <% end %>
+      <%= link_to "Sign up", new_user_registration_path, class: "custom-button" %>
+    </div>
+
+    <p style="margin-top: 60px; font-size: 12px; text-align: center; color: #aaa;">© PUMPLOG</p>
+  </div>
+<% end %>
