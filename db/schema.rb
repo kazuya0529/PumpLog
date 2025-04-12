@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_04_07_063014) do
+ActiveRecord::Schema[7.1].define(version: 2025_04_12_094102) do
   create_table "users", charset: "utf8mb3", force: :cascade do |t|
     t.string "nickname", null: false
     t.string "email", default: "", null: false
@@ -32,6 +32,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_04_07_063014) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.date "date"
+    t.integer "user_id"
   end
 
 end
