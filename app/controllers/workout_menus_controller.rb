@@ -1,7 +1,7 @@
 class WorkoutMenusController < ApplicationController
   before_action :authenticate_user!, except: [:index]
   def index
-    @workout_menus = WorkoutMenu.all
+    @workout_menus = current_user.workout_menus
   end
 
   def new
