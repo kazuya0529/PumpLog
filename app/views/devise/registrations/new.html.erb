@@ -1,0 +1,34 @@
+<div class="new-form-page">
+  <h1 class="page-title">SIGN UP</h1>
+
+  <div class="form-box">
+    <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
+
+      <div class="field">
+        <p>Nickname ( 6 characters maximum )</p>
+        <%= f.text_field :nickname, autofocus: true, maxlength: "6", class: "select-box" %>
+      </div>
+      
+      <div class="field">
+        <p>Email</p>
+        <%= f.email_field :email, class: "select-box" %>
+      </div>
+
+      <div class="field">
+        <p>Password</p>
+        <%= f.password_field :password, class:"select-box" %>
+      </div>
+
+      <div class="field">
+        <p>Password confirmation</p>
+        <%= f.password_field :password_confirmation, class:"select-box" %>
+      </div>
+
+      <div class="button-wrapper">
+        <%= f.submit "Sign up", class: "submit-button" %>
+      </div>
+    <% end %>
+  </div>
+  
+  <p style="margin-top: 60px; font-size: 12px; text-align: center; color: #aaa;">© PUMPLOG</p>
+</div>

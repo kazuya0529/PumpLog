@@ -1,6 +1,7 @@
 class WorkoutMenusController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
   def index
-    @workout_menus = WorkoutMenu.all
+    @workout_menus = user_signed_in? ? current_user.workout_menus : []
   end
 
   def new
@@ -9,6 +10,7 @@ class WorkoutMenusController < ApplicationController
 
   def create
     @workout_menu = WorkoutMenu.new(workout_menu_params)
+    @workout_menu.user = current_user
     if @workout_menu.save
       redirect_to workout_menus_path
     else
