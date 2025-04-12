@@ -6,7 +6,7 @@
 
     <div class="button-wrapper">
       <%= link_to "New Pump", new_workout_menu_path, class: "custom-button" %>
-      <%= link_to destroy_user_session_path, data: { turbo_method: :delete }, class: "custom-button" do %>
+      <%= link_to destroy_user_session_path, data: { turbo_method: :get }, class: "custom-button" do %>
         &ensp; Log out &ensp;
       <% end %>
     </div>
