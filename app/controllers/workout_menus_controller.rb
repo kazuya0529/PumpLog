@@ -10,6 +10,7 @@ class WorkoutMenusController < ApplicationController
 
   def create
     @workout_menu = WorkoutMenu.new(workout_menu_params)
+    @workout_menu.user = current_user
     if @workout_menu.save
       redirect_to workout_menus_path
     else
